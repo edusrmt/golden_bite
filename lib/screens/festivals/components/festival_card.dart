@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:golden_bite/screens/festival/festival.dart';
 
 class FestivalCard extends StatelessWidget {
   const FestivalCard(
@@ -34,7 +35,10 @@ class FestivalCard extends StatelessWidget {
           alignment: MainAxisAlignment.start,
           children: [
             TextButton(
-                onPressed: () => print('VISUALIZAR'),
+                onPressed: () => Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (BuildContext context) => Festival())),
                 child: Text('VISUALIZAR')),
           ],
         )
