@@ -7,8 +7,7 @@ void main() {
     title: 'Golden Bite',
     home: Login(),
     debugShowCheckedModeBanner: false,
-    theme: ThemeData(
-        colorScheme: ColorScheme.dark(primary: kPrimaryColor)),
+    theme: ThemeData(colorScheme: ColorScheme.dark(primary: kPrimaryColor)),
     themeMode: ThemeMode.dark,
   ));
 }
