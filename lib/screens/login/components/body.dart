@@ -22,7 +22,7 @@ class Body extends StatelessWidget {
             SizedBox(height: size.height * 0.03),
             Image.asset(
               "assets/logo.png",
-              height: size.height * 0.35,
+              height: size.height * 0.25,
             ),
             SizedBox(height: size.height * 0.03),
             RoundedInputField(
@@ -35,15 +35,24 @@ class Body extends StatelessWidget {
             RoundedButton(
               text: "ENTRAR",
               press: () {
-                 Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => Festivals()));
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (BuildContext context) => Festivals()));
               },
             ),
-            TextButton(onPressed:() {
-                 Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => Register()));
-              } , child: Text(
-                "Cadastre-se",  style: TextStyle(color: Colors.white),
+            TextButton(
+              onPressed: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (BuildContext context) => Register()));
+              },
+              child: Text(
+                "Cadastre-se",
+                style: TextStyle(color: Colors.white),
               ),
-              ),
+            ),
           ],
         ),
       ),
