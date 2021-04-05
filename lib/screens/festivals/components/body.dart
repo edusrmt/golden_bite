@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:golden_bite/components/main_drawer.dart';
 import 'package:golden_bite/screens/festivals/components/festival_card.dart';
-
 class Body extends StatelessWidget {
   const Body({
     Key key,
@@ -12,8 +12,8 @@ class Body extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text('Festivais'),
-        leading: Icon(Icons.menu),
       ),
+      drawer: MainDrawer(),
       body: ListView(
         padding: EdgeInsets.symmetric(vertical: 15, horizontal: 10),
         children: <Widget>[

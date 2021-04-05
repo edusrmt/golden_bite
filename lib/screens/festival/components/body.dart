@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:golden_bite/components/main_drawer.dart';
 import 'package:golden_bite/screens/festival/components/food_card.dart';
 
 class Body extends StatelessWidget {
@@ -9,7 +10,7 @@ class Body extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Melhor Pizza'), leading: Icon(Icons.menu)),
+      appBar: AppBar(title: Text('Melhor Pizza')), drawer: MainDrawer(),
       body: ListView(
         padding: EdgeInsets.symmetric(vertical: 15, horizontal: 10),
         children: <Widget>[

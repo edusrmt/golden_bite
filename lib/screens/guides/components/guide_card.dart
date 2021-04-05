@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:golden_bite/screens/festival/festival.dart';
 
 class GuideCard extends StatelessWidget {
   const GuideCard({Key key, this.headerText, this.supportingText})
@@ -30,7 +31,12 @@ class GuideCard extends StatelessWidget {
           alignment: MainAxisAlignment.end,
           children: [
             TextButton(
-                onPressed: () => print('VISUALIZAR'),
+                onPressed: () => {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (BuildContext context) => Festival()))
+              },
                 child: Text('VISUALIZAR')),
           ],
         )
