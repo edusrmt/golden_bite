@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:golden_bite/screens/festivals/festivals.dart';
-import 'package:golden_bite/screens/login/components/background.dart';
+import 'package:golden_bite/components/background.dart';
 import 'package:golden_bite/components/rounded_button.dart';
 import 'package:golden_bite/components/rounded_input_field.dart';
 import 'package:golden_bite/components/rounded_password_field.dart';

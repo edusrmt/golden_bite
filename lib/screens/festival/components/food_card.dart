@@ -19,7 +19,7 @@ class FoodCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
-        child: Column(
+      child: Column(
       children: <Widget>[
         ListTile(
           title: Text(headerText, style: Theme.of(context).textTheme.headline5),

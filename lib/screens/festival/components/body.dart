@@ -14,6 +14,12 @@ class Body extends StatelessWidget {
       body: ListView(
         padding: EdgeInsets.symmetric(vertical: 15, horizontal: 10),
         children: <Widget>[
+            IconButton(
+              icon: new Icon(Icons.arrow_back),
+              onPressed: () {
+                Navigator.pop(context);
+              },
+            ),
           FoodCard(
             headerText: 'SR. FALCO',
             media: 'assets/pizza.jpg',

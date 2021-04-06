@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:golden_bite/constants.dart';
 import 'package:golden_bite/screens/festivals/festivals.dart';
 import 'package:golden_bite/screens/guides/guides.dart';
+import 'package:golden_bite/screens/login/login.dart';
+import 'package:golden_bite/screens/perfil/perfil.dart';
 
 class MainDrawer extends StatelessWidget {
   @override
@@ -8,15 +11,15 @@ class MainDrawer extends StatelessWidget {
     return Drawer(
       child: ListView(
           children: <Widget>[
-              UserAccountsDrawerHeader(
-              accountName: Text("João da Silva", style: TextStyle(fontSize: 20.0)),
-              accountEmail: Text("joao@gmail.com"),
-              currentAccountPicture: CircleAvatar(
-                backgroundImage: AssetImage('assets/logo.png'),
-                radius: 30.0,
-                backgroundColor: Colors.transparent,
-              ),
+            UserAccountsDrawerHeader(
+            accountName: Text("João da Silva", style: TextStyle(fontSize: 20.0)),
+            accountEmail: Text("joao@gmail.com"),
+            currentAccountPicture: CircleAvatar(
+              backgroundImage: AssetImage('assets/logo.png'),
+              radius: 30.0,
+              backgroundColor: Colors.transparent,
             ),
+          ),
           ListTile(
             leading: Icon(Icons.list),
             title: Text('Festivais'),
@@ -45,12 +48,22 @@ class MainDrawer extends StatelessWidget {
           ListTile(
             leading: Icon(Icons.person),
             title: Text('Meu Perfil'),
-            onTap: null,
+            onTap: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (BuildContext context) => Perfil()));
+              },
           ),
           ListTile(
             leading: Icon(Icons.exit_to_app),
             title: Text('Sair'),
-            onTap: null,
+            onTap: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (BuildContext context) => Login()));
+              },
           ),
         ],
       ),
