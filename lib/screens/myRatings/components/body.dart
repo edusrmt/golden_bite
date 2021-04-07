@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:golden_bite/components/main_drawer.dart';
-import 'package:golden_bite/screens/festival/components/food_card.dart';
+import 'package:golden_bite/screens/myRatings/components/rating_card.dart';
 
 class Body extends StatelessWidget {
   const Body({
@@ -21,22 +21,21 @@ class Body extends StatelessWidget {
               },
               alignment: Alignment.centerLeft,
             ),
-          FoodCard(
-            headerText: 'SR. FALCO',
-            media: 'assets/pizza.jpg',
+          RatingCard(
+            headerText: 'Braz Elettrica',
+            nameFestival: 'Melhor pizza',
+            rating: 3.5,
             supportingText:
-                'Molho de tomate, linguiça fresca, cebola roxa, alho, manjericão, picles de jalapeño, parmesão.',
-            place: 'Curva do Vento',
-            address: 'Av. Salgado Filho, 3693',
+                'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
           ),
           SizedBox(height: 15),
-          FoodCard(
-              headerText: 'COBRAVERDE',
-              media: 'assets/pizza.jpg',
+          RatingCard(
+              headerText: 'Reis Magos',
+              nameFestival: 'Melhor pizza',
+              rating: 4.5,
               supportingText:
-                  'Mozzarella de Búfala, rúcula temperada, parmesão.',
-              place: 'Brazz Eletrica',
-              address: 'Rua Luiz Dias, 234'),
+                  'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+          ),
         ],
       ),
     );

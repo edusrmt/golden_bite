@@ -32,6 +32,7 @@ class Body extends StatelessWidget {
             RoundedPasswordField(
               onChanged: (value) {},
             ),
+            SizedBox(height: 12),
             RoundedButton(
               text: "ENTRAR",
               press: () {

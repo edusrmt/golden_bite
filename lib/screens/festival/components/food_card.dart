@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:golden_bite/screens/rating/rating.dart';
 
 class FoodCard extends StatelessWidget {
   const FoodCard(
@@ -52,7 +53,10 @@ class FoodCard extends StatelessWidget {
                   ],
                 ),
                 TextButton(
-                    onPressed: () => print('AVALIAR'), child: Text('AVALIAR')),
+                    onPressed: () => Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (BuildContext context) => Rating())), child: Text('AVALIAR')),
               ],
             ))
       ],

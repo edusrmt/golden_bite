@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:golden_bite/constants.dart';
 import 'package:golden_bite/screens/festivals/festivals.dart';
 import 'package:golden_bite/screens/guides/guides.dart';
 import 'package:golden_bite/screens/login/login.dart';
-import 'package:golden_bite/screens/perfil/perfil.dart';
+import 'package:golden_bite/screens/profile/profile.dart';
+import 'package:golden_bite/screens/myRatings/myRatings.dart';
 
 class MainDrawer extends StatelessWidget {
   @override
@@ -43,7 +43,12 @@ class MainDrawer extends StatelessWidget {
           ListTile(
             leading: Icon(Icons.favorite),
             title: Text('Minhas Avaliações'),
-            onTap: null,
+             onTap: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (BuildContext context) => MyRatings()));
+              },
           ),
           ListTile(
             leading: Icon(Icons.person),
@@ -52,7 +57,7 @@ class MainDrawer extends StatelessWidget {
                 Navigator.push(
                     context,
                     MaterialPageRoute(
-                        builder: (BuildContext context) => Perfil()));
+                        builder: (BuildContext context) => Profile()));
               },
           ),
           ListTile(
