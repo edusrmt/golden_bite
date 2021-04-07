@@ -10,31 +10,32 @@ class Body extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Melhor Pizza')), drawer: MainDrawer(),
+      appBar: AppBar(title: Text('Minhas Avaliações')),
+      drawer: MainDrawer(),
       body: ListView(
         padding: EdgeInsets.symmetric(horizontal: 10),
         children: <Widget>[
-            IconButton(
-              icon: new Icon(Icons.arrow_back),
-              onPressed: () {
-                Navigator.pop(context);
-              },
-              alignment: Alignment.centerLeft,
-            ),
+          IconButton(
+            icon: new Icon(Icons.arrow_back),
+            onPressed: () {
+              Navigator.pop(context);
+            },
+            alignment: Alignment.centerLeft,
+          ),
           RatingCard(
             headerText: 'Braz Elettrica',
-            nameFestival: 'Melhor pizza',
             rating: 3.5,
+            festival: 'Melhor Pizza',
             supportingText:
                 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
           ),
           SizedBox(height: 15),
           RatingCard(
-              headerText: 'Reis Magos',
-              nameFestival: 'Melhor pizza',
-              rating: 4.5,
-              supportingText:
-                  'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+            headerText: 'Reis Magos',
+            rating: 4.5,
+            festival: 'Melhor Pizza',
+            supportingText:
+                'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
           ),
         ],
       ),

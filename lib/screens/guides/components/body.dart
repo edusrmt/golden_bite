@@ -10,7 +10,8 @@ class Body extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Guias')), drawer: MainDrawer(),
+      appBar: AppBar(title: Text('Guias')),
+      drawer: MainDrawer(),
       body: ListView(
         padding: EdgeInsets.symmetric(vertical: 15, horizontal: 10),
         children: <Widget>[

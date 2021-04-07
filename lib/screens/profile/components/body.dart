@@ -15,6 +15,7 @@ class Body extends StatelessWidget {
       appBar: AppBar(title: Text('Meu Perfil')),
       drawer: MainDrawer(),
       body: SingleChildScrollView(
+        padding: EdgeInsets.symmetric(horizontal: 16),
         child: Column(
           children: <Widget>[
             SizedBox(height: size.height * 0.03),
@@ -41,6 +42,7 @@ class Body extends StatelessWidget {
               text: "EDITAR INFORMAÇÕES",
               press: () {},
             ),
+            SizedBox(height: 12),
             RoundedButton(
               text: "ALTERAR SENHA",
               press: () {},

@@ -15,6 +15,7 @@ class Body extends StatelessWidget {
     Size size = MediaQuery.of(context).size;
     return Background(
       child: SingleChildScrollView(
+        padding: EdgeInsets.symmetric(horizontal: 16),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
@@ -27,11 +28,11 @@ class Body extends StatelessWidget {
               hintText: "Nome",
               onChanged: (value) {},
             ),
-             RoundedInputField(
+            RoundedInputField(
               hintText: "Sobrenome",
               onChanged: (value) {},
             ),
-             RoundedInputField(
+            RoundedInputField(
               hintText: "CPF",
               onChanged: (value) {},
             ),
@@ -45,7 +46,10 @@ class Body extends StatelessWidget {
             RoundedButton(
               text: "CADASTRAR",
               press: () {
-                 Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => Festivals()));
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (BuildContext context) => Festivals()));
               },
             ),
           ],
