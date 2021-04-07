@@ -4,6 +4,7 @@ import 'package:golden_bite/components/rounded_button.dart';
 import 'package:golden_bite/components/rounded_input_field.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:golden_bite/constants.dart';
+import 'package:golden_bite/screens/festival/festival.dart';
 
 class Body extends StatelessWidget {
   const Body({
@@ -45,7 +46,7 @@ class Body extends StatelessWidget {
               onRatingUpdate: (rating) {
                 print(rating);
               },
-            ),    
+            ),
             RoundedInputField(
               hintText: "Observação",
               size: 110,
@@ -53,7 +54,10 @@ class Body extends StatelessWidget {
             ),
             RoundedButton(
               text: "AVALIAR",
-              press: () {},
+              press: () => Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (BuildContext context) => Festival())),
             ),
           ],
         ),
