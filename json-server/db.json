@@ -72,16 +72,19 @@
         {
             "id": 1,
             "nome": "Melhor Pizza",
+            "descricao": "Confira o ranking das melhores pizzas de Natal",
             "pratos": [1,2]
         },
         {
             "id": 2,
             "nome": "Melhor Hambúrguer",
+            "descricao": "Confira o ranking dos melhores hambúrgueres de Natal",
             "pratos": [3,4]
         },
         {
             "id": 3,
             "nome": "Melhor Massa",
+            "descricao": "Confira o ranking das melhores massas de Natal",
             "pratos": [5,6]
         }
     ],

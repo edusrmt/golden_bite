@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:golden_bite/screens/guide/guide.dart';
+import 'package:golden_bite/models/guide.dart';
 
 class GuideCard extends StatelessWidget {
-  const GuideCard({Key key, this.headerText, this.supportingText})
-      : super(key: key);
+  const GuideCard({Key key, this.guide}): super(key: key);
 
-  final String headerText;
-  final String supportingText;
+  final Guide guide;
 
   @override
   Widget build(BuildContext context) {
@@ -19,12 +18,12 @@ class GuideCard extends StatelessWidget {
             SizedBox(
               width: 8,
             ),
-            Text(headerText, style: Theme.of(context).textTheme.headline6)
+            Text(guide.nome, style: Theme.of(context).textTheme.headline6)
           ]),
         ),
         Padding(
           padding: const EdgeInsets.symmetric(vertical: 0, horizontal: 16),
-          child: Text(supportingText,
+          child: Text(guide.descricao,
               style: Theme.of(context).textTheme.bodyText2),
         ),
         ButtonBar(
@@ -35,7 +34,7 @@ class GuideCard extends StatelessWidget {
                       Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (BuildContext context) => Guide()))
+                              builder: (BuildContext context) => GuideDetail()))
                     },
                 child: Text('VISUALIZAR')),
           ],
