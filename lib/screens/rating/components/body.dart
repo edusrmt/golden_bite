@@ -57,7 +57,7 @@ class Body extends StatelessWidget {
               press: () => Navigator.push(
                   context,
                   MaterialPageRoute(
-                      builder: (BuildContext context) => Festival())),
+                      builder: (BuildContext context) => FestivalDetail())),
             ),
           ],
         ),

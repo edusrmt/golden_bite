@@ -3,7 +3,7 @@
         {
             "id": 1,
             "nome": "Festival de Alexandria",
-            "logo": "",
+            "capa": "assets/pizza.jpg",
             "descricao": "Este é um festival de culinária mais famoso da cidade de Alexandria.",
             "data_inicio": "2021-04-07",
             "data_fim": "2021-04-21",
@@ -12,7 +12,7 @@
         {
             "id": 2,
             "nome": "Culinária Aragonesa",
-            "logo": "",
+            "capa": "assets/hamburger.jpg",
             "descricao": "Este é um festival da culinária aragonesa com descendência espanhola.",
             "data_inicio": "2021-05-01",
             "data_fim": "2021-05-12",
@@ -21,7 +21,7 @@
         {
             "id": 3,
             "nome": "Dias Festival",
-            "logo": "",
+            "capa": "assets/pizza.jpg",
             "descricao": "Este é um festival de culinária para abrilhantar ainda mais o seu dia.",
             "data_inicio": "2021-04-12",
             "data_fim": "2021-04-30",
