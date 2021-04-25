@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:golden_bite/models/user.dart';
 import 'package:golden_bite/screens/login/login.dart';
 import 'package:golden_bite/services/api.dart';
 import 'package:golden_bite/screens/festivals/festivals.dart';
@@ -25,6 +26,16 @@ class _BodyState extends State<Body> {
     super.initState();
 
     _api = new API();
+    autoLogin();
+  }
+
+  void autoLogin() async {
+    User user = await Auth.getUser();
+
+    if (user.id != -1) {
+      Navigator.push(context,
+          MaterialPageRoute(builder: (BuildContext context) => Festivals()));
+    }
   }
 
   @override
