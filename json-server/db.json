@@ -33,38 +33,32 @@
         {
             "id": 1,
             "nome": "Restaurante Furacão",
-            "endereco": "Rua do Peão, 11",
-            "festival_id": 1
+            "endereco": "Rua do Peão, 11"
         },
         {
             "id": 2,
             "nome": "Pizzaria Alencar",
-            "endereco": "Rua Sorveteiro, 104",
-            "festival_id": 1
+            "endereco": "Rua Sorveteiro, 104"
         },
         {
             "id": 3,
             "nome": "Xique-xique",
-            "endereco": "Avenida Coriolano, 1722",
-            "festival_id": 2
+            "endereco": "Avenida Coriolano, 1722"
         },
         {
             "id": 4,
             "nome": "Restaurante Proseando",
-            "endereco": "Rua Jorge Amado, 32",
-            "festival_id": 2
+            "endereco": "Rua Jorge Amado, 32"
         },
         {
             "id": 5,
             "nome": "Bem-te-vi Sanduicheria",
-            "endereco": "Rua dos Pássaros, 10",
-            "festival_id": 3
+            "endereco": "Rua dos Pássaros, 10"
         },
         {
             "id": 6,
             "nome": "Chanana",
-            "endereco": "Avenida das Flores, 14",
-            "festival_id": 3
+            "endereco": "Avenida das Flores, 14"
         }
     ],
 
@@ -93,38 +87,56 @@
         {
             "id": 1,
             "nome": "Franbacon",
+            "capa": "assets/pizzaFranbacon.jpg",
             "ingredientes": "Frango, bacon e milho",
-            "estabelecimento_id": 2
+            "restauranteId": 2,
+            "restauranteNome": "Pizzaria Alencar",
+            "restauranteEndereco": "Rua Sorverteiro, 104"
         },
         {
             "id": 2,
             "nome": "Twitter",
+            "capa": "assets/pizzaTwitter.jpg",
             "ingredientes": "Camarão, catupiry e milho",
-            "estabelecimento_id": 1
+            "restauranteId": 1,
+            "restauranteNome": "Restaurante Furacão",
+            "restauranteEndereco": "Rua do Peão, 11"
         },
         {
             "id": 3,
             "nome": "Xique-Chicken",
+            "capa": "assets/hamburguerXiquechicken.jpg",
             "ingredientes": "Frango desfiado, catupiry e molho aragonês",
-            "estabelecimento_id": 3
+            "restauranteId": 3,
+            "restauranteNome": "Xique-xique",
+            "restauranteEndereco": "Avenida Coriolano, 1722"
         },
         {
             "id": 4,
             "nome": "Papo-Alvinegro",
+            "capa": "assets/hamburguerPapo-alvinegro.jpg",
             "ingredientes": "3 hambúrgures de carne, cheddar e maionese temperada",
-            "estabelecimento_id": 4
+            "restauranteId": 4,
+            "restauranteNome": "Restaurante Proseando",
+            "restauranteEndereco": "Rua Jorge Amado, 32"
         },
         {
             "id": 5,
             "nome": "Lasanha de frango",
+            "capa": "assets/lasanhaFrango.jpg",
             "ingredientes": "Frango, mussarela e molho bem-te-vi",
-            "estabelecimento_id": 5
+            "restauranteId": 5,
+            "restauranteNome": "Bem-te-vi Sanduicheria",
+            "restauranteEndereco": "Rua dos Pássaros, 10"
         },
         {
             "id": 6,
             "nome": "Torta de Margherita",
+            "capa": "assets/tortaMarguerita.jpg",
             "ingredientes": "Mussarela, tomate e manjericão",
-            "estabelecimento_id": 6
+            "restauranteId": 6,
+            "restauranteNome": "Chanana",
+            "restauranteEndereco": "Avenida das Flores, 14"
         }
     ],
 

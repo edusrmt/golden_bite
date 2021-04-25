@@ -34,7 +34,7 @@ class GuideCard extends StatelessWidget {
                       Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (BuildContext context) => GuideDetail()))
+                              builder: (BuildContext context) => GuideDetail(guide.pratos, guide.nome)))
                     },
                 child: Text('VISUALIZAR')),
           ],
