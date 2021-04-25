@@ -2,10 +2,46 @@ import 'package:golden_bite/models/festival.dart';
 import 'package:golden_bite/models/guide.dart';
 import 'package:intl/intl.dart';
 import 'package:http/http.dart' as http;
+import 'package:crypt/crypt.dart';
 import 'dart:convert';
 
 class API {
-  static String baseUrl = '192.168.0.106:3000';
+  static String baseUrl = '';
+
+  Future<bool> createAccount(String nome, String sobrenome, String cpf,
+      String email, String senha) async {
+    final same_email =
+        await http.get(Uri.http(baseUrl, 'clientes', {'email': email}));
+
+    if (same_email.statusCode == 200 && same_email.body == '[]') {
+      final same_cpf =
+          await http.get(Uri.http(baseUrl, 'clientes', {'cpf': cpf}));
+
+      if (same_cpf.statusCode == 200 && same_cpf.body == '[]') {
+        final hashSenha = Crypt.sha256(senha);
+
+        final response = await http.post(
+          Uri.http(baseUrl, 'clientes'),
+          headers: <String, String>{
+            'Content-Type': 'application/json; charset=UTF-8',
+          },
+          body: jsonEncode(<String, String>{
+            'nome': nome,
+            'sobrenome': sobrenome,
+            'cpf': cpf,
+            'email': email,
+            'senha': hashSenha.toString()
+          }),
+        );
+
+        if (response.statusCode == 201) {
+          return true;
+        }
+      }
+    }
+
+    return false;
+  }
 
   Future<List<Festival>> fetchFestivals() async {
     final response = await http.get(Uri.http(baseUrl, 'festivais',
