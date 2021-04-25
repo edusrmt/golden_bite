@@ -1,223 +1,244 @@
 {
-    "festivais": [
-        {
-            "id": 1,
-            "nome": "Festival de Alexandria",
-            "capa": "assets/pizza.jpg",
-            "descricao": "Este é um festival de culinária mais famoso da cidade de Alexandria.",
-            "data_inicio": "2021-04-07",
-            "data_fim": "2021-04-21",
-            "pratos": [1,2]
-        },
-        {
-            "id": 2,
-            "nome": "Culinária Aragonesa",
-            "capa": "assets/hamburger.jpg",
-            "descricao": "Este é um festival da culinária aragonesa com descendência espanhola.",
-            "data_inicio": "2021-05-01",
-            "data_fim": "2021-05-12",
-            "pratos": [3,4]
-        },
-        {
-            "id": 3,
-            "nome": "Dias Festival",
-            "capa": "assets/pizza.jpg",
-            "descricao": "Este é um festival de culinária para abrilhantar ainda mais o seu dia.",
-            "data_inicio": "2021-04-12",
-            "data_fim": "2021-04-30",
-            "pratos": [5,6]
-        }
-    ],
-
-    "estabelecimentos": [
-        {
-            "id": 1,
-            "nome": "Restaurante Furacão",
-            "endereco": "Rua do Peão, 11"
-        },
-        {
-            "id": 2,
-            "nome": "Pizzaria Alencar",
-            "endereco": "Rua Sorveteiro, 104"
-        },
-        {
-            "id": 3,
-            "nome": "Xique-xique",
-            "endereco": "Avenida Coriolano, 1722"
-        },
-        {
-            "id": 4,
-            "nome": "Restaurante Proseando",
-            "endereco": "Rua Jorge Amado, 32"
-        },
-        {
-            "id": 5,
-            "nome": "Bem-te-vi Sanduicheria",
-            "endereco": "Rua dos Pássaros, 10"
-        },
-        {
-            "id": 6,
-            "nome": "Chanana",
-            "endereco": "Avenida das Flores, 14"
-        }
-    ],
-
-    "guias": [
-        {
-            "id": 1,
-            "nome": "Melhor Pizza",
-            "descricao": "Confira o ranking das melhores pizzas de Natal",
-            "pratos": [1,2]
-        },
-        {
-            "id": 2,
-            "nome": "Melhor Hambúrguer",
-            "descricao": "Confira o ranking dos melhores hambúrgueres de Natal",
-            "pratos": [3,4]
-        },
-        {
-            "id": 3,
-            "nome": "Melhor Massa",
-            "descricao": "Confira o ranking das melhores massas de Natal",
-            "pratos": [5,6]
-        }
-    ],
-
-    "pratos": [
-        {
-            "id": 1,
-            "nome": "Franbacon",
-            "capa": "assets/pizzaFranbacon.jpg",
-            "ingredientes": "Frango, bacon e milho",
-            "restauranteId": 2,
-            "restauranteNome": "Pizzaria Alencar",
-            "restauranteEndereco": "Rua Sorverteiro, 104"
-        },
-        {
-            "id": 2,
-            "nome": "Twitter",
-            "capa": "assets/pizzaTwitter.jpg",
-            "ingredientes": "Camarão, catupiry e milho",
-            "restauranteId": 1,
-            "restauranteNome": "Restaurante Furacão",
-            "restauranteEndereco": "Rua do Peão, 11"
-        },
-        {
-            "id": 3,
-            "nome": "Xique-Chicken",
-            "capa": "assets/hamburguerXiquechicken.jpg",
-            "ingredientes": "Frango desfiado, catupiry e molho aragonês",
-            "restauranteId": 3,
-            "restauranteNome": "Xique-xique",
-            "restauranteEndereco": "Avenida Coriolano, 1722"
-        },
-        {
-            "id": 4,
-            "nome": "Papo-Alvinegro",
-            "capa": "assets/hamburguerPapo-alvinegro.jpg",
-            "ingredientes": "3 hambúrgures de carne, cheddar e maionese temperada",
-            "restauranteId": 4,
-            "restauranteNome": "Restaurante Proseando",
-            "restauranteEndereco": "Rua Jorge Amado, 32"
-        },
-        {
-            "id": 5,
-            "nome": "Lasanha de frango",
-            "capa": "assets/lasanhaFrango.jpg",
-            "ingredientes": "Frango, mussarela e molho bem-te-vi",
-            "restauranteId": 5,
-            "restauranteNome": "Bem-te-vi Sanduicheria",
-            "restauranteEndereco": "Rua dos Pássaros, 10"
-        },
-        {
-            "id": 6,
-            "nome": "Torta de Margherita",
-            "capa": "assets/tortaMarguerita.jpg",
-            "ingredientes": "Mussarela, tomate e manjericão",
-            "restauranteId": 6,
-            "restauranteNome": "Chanana",
-            "restauranteEndereco": "Avenida das Flores, 14"
-        }
-    ],
-
-    "clientes": [
-        {
-            "id": 1,
-            "nome": "Carlos",
-            "sobrenome": "Eduardo",
-            "email": "carloseduardo@email.com",
-            "senha": "ac2831c0ca8add7bbf865e587b54261d570a9aa9",
-            "foto": "",
-            "cpf": "000.000.000-00"
-        },
-        {
-            "id": 2,
-            "nome": "Jâncy",
-            "sobrenome": "Aragão",
-            "email": "jancyaragao@email.com",
-            "senha": "5c611bbf265e0910f2f178b6f0256ce4bf324975",
-            "foto": "",
-            "cpf": "777.777.777-77"
-        },
-        {
-            "id": 3,
-            "nome": "Jemima",
-            "sobrenome": "Dias",
-            "email": "jemimadias@email.com",
-            "senha": "7517ba3eff3c7feba44a115dad6e0cea782d80c0",
-            "foto": "",
-            "cpf": "111.111.111-11"
-        }
-    ],
-
-    "avaliacao": [
-        {
-            "id": 1,
-            "nota": 9.5,
-            "comentario": "Delicioso!",
-            "codigo": "MNB6512",
-            "prato_id": 1,
-            "cliente_id": 1
-        },
-        {
-            "id": 2,
-            "nota": 8,
-            "comentario": "Sinto que faltou algum toque especial.",
-            "codigo": "POI4829",
-            "prato_id": 2,
-            "cliente_id": 1
-        },
-        {
-            "id": 3,
-            "nota": 9.7,
-            "comentario": "Prato fera demais!",
-            "codigo": "JKL1277",
-            "prato_id": 3,
-            "cliente_id": 2
-        },
-        {
-            "id": 4,
-            "nota": 9.2,
-            "comentario": "A maionese temperada deu um sabor sensacional!",
-            "codigo": "ABC1234",
-            "prato_id": 4,
-            "cliente_id": 2
-        },
-        {
-            "id": 5,
-            "nota": 9,
-            "comentario": "Ai, adorei este prato, voltarei mais vezes para saborear!",
-            "codigo": "RTE4853",
-            "prato_id": 5,
-            "cliente_id": 3
-        },
-        {
-            "id": 6,
-            "nota": 8.9,
-            "comentario": "Com um ajuste na massa, sendo mais fina, fica melhor.",
-            "codigo": "ZXC6531",
-            "prato_id": 6,
-            "cliente_id": 3
-        }
-    ]
+  "festivais": [
+    {
+      "id": 1,
+      "nome": "Festival de Alexandria",
+      "capa": "assets/pizza.jpg",
+      "descricao": "Este é um festival de culinária mais famoso da cidade de Alexandria.",
+      "data_inicio": "2021-04-07",
+      "data_fim": "2021-04-21",
+      "pratos": [
+        1,
+        2
+      ]
+    },
+    {
+      "id": 2,
+      "nome": "Culinária Aragonesa",
+      "capa": "assets/hamburger.jpg",
+      "descricao": "Este é um festival da culinária aragonesa com descendência espanhola.",
+      "data_inicio": "2021-05-01",
+      "data_fim": "2021-05-12",
+      "pratos": [
+        3,
+        4
+      ]
+    },
+    {
+      "id": 3,
+      "nome": "Dias Festival",
+      "capa": "assets/pizza.jpg",
+      "descricao": "Este é um festival de culinária para abrilhantar ainda mais o seu dia.",
+      "data_inicio": "2021-04-12",
+      "data_fim": "2021-04-30",
+      "pratos": [
+        5,
+        6
+      ]
+    }
+  ],
+  "estabelecimentos": [
+    {
+      "id": 1,
+      "nome": "Restaurante Furacão",
+      "endereco": "Rua do Peão, 11"
+    },
+    {
+      "id": 2,
+      "nome": "Pizzaria Alencar",
+      "endereco": "Rua Sorveteiro, 104"
+    },
+    {
+      "id": 3,
+      "nome": "Xique-xique",
+      "endereco": "Avenida Coriolano, 1722"
+    },
+    {
+      "id": 4,
+      "nome": "Restaurante Proseando",
+      "endereco": "Rua Jorge Amado, 32"
+    },
+    {
+      "id": 5,
+      "nome": "Bem-te-vi Sanduicheria",
+      "endereco": "Rua dos Pássaros, 10"
+    },
+    {
+      "id": 6,
+      "nome": "Chanana",
+      "endereco": "Avenida das Flores, 14"
+    }
+  ],
+  "guias": [
+    {
+      "id": 1,
+      "nome": "Melhor Pizza",
+      "descricao": "Confira o ranking das melhores pizzas de Natal",
+      "pratos": [
+        1,
+        2
+      ]
+    },
+    {
+      "id": 2,
+      "nome": "Melhor Hambúrguer",
+      "descricao": "Confira o ranking dos melhores hambúrgueres de Natal",
+      "pratos": [
+        3,
+        4
+      ]
+    },
+    {
+      "id": 3,
+      "nome": "Melhor Massa",
+      "descricao": "Confira o ranking das melhores massas de Natal",
+      "pratos": [
+        5,
+        6
+      ]
+    }
+  ],
+  "pratos": [
+    {
+      "id": 1,
+      "nome": "Franbacon",
+      "capa": "assets/pizzaFranbacon.jpg",
+      "ingredientes": "Frango, bacon e milho",
+      "restauranteId": 2,
+      "restauranteNome": "Pizzaria Alencar",
+      "restauranteEndereco": "Rua Sorverteiro, 104"
+    },
+    {
+      "id": 2,
+      "nome": "Twitter",
+      "capa": "assets/pizzaTwitter.jpg",
+      "ingredientes": "Camarão, catupiry e milho",
+      "restauranteId": 1,
+      "restauranteNome": "Restaurante Furacão",
+      "restauranteEndereco": "Rua do Peão, 11"
+    },
+    {
+      "id": 3,
+      "nome": "Xique-Chicken",
+      "capa": "assets/hamburguerXiquechicken.jpg",
+      "ingredientes": "Frango desfiado, catupiry e molho aragonês",
+      "restauranteId": 3,
+      "restauranteNome": "Xique-xique",
+      "restauranteEndereco": "Avenida Coriolano, 1722"
+    },
+    {
+      "id": 4,
+      "nome": "Papo-Alvinegro",
+      "capa": "assets/hamburguerPapo-alvinegro.jpg",
+      "ingredientes": "3 hambúrgures de carne, cheddar e maionese temperada",
+      "restauranteId": 4,
+      "restauranteNome": "Restaurante Proseando",
+      "restauranteEndereco": "Rua Jorge Amado, 32"
+    },
+    {
+      "id": 5,
+      "nome": "Lasanha de frango",
+      "capa": "assets/lasanhaFrango.jpg",
+      "ingredientes": "Frango, mussarela e molho bem-te-vi",
+      "restauranteId": 5,
+      "restauranteNome": "Bem-te-vi Sanduicheria",
+      "restauranteEndereco": "Rua dos Pássaros, 10"
+    },
+    {
+      "id": 6,
+      "nome": "Torta de Margherita",
+      "capa": "assets/tortaMarguerita.jpg",
+      "ingredientes": "Mussarela, tomate e manjericão",
+      "restauranteId": 6,
+      "restauranteNome": "Chanana",
+      "restauranteEndereco": "Avenida das Flores, 14"
+    }
+  ],
+  "clientes": [
+    {
+      "id": 1,
+      "nome": "Carlos",
+      "sobrenome": "Eduardo",
+      "email": "carloseduardo@email.com",
+      "senha": "ac2831c0ca8add7bbf865e587b54261d570a9aa9",
+      "foto": "",
+      "cpf": "000.000.000-00"
+    },
+    {
+      "id": 2,
+      "nome": "Jâncy",
+      "sobrenome": "Aragão",
+      "email": "jancyaragao@email.com",
+      "senha": "5c611bbf265e0910f2f178b6f0256ce4bf324975",
+      "foto": "",
+      "cpf": "777.777.777-77"
+    },
+    {
+      "id": 3,
+      "nome": "Jemima",
+      "sobrenome": "Dias",
+      "email": "jemimadias@email.com",
+      "senha": "7517ba3eff3c7feba44a115dad6e0cea782d80c0",
+      "foto": "",
+      "cpf": "111.111.111-11"
+    },
+    {
+      "nome": "Airton",
+      "sobrenome": "Neto",
+      "cpf": "88888888888",
+      "email": "airton@gmail.com",
+      "senha": "$5$F6RMfRLi2oZEkr8i$YBkHgkzK3xrq9//EieowKqmcwNOpkoRGncfgbNM6tW7",
+      "id": 4
+    }
+  ],
+  "avaliacao": [
+    {
+      "id": 1,
+      "nota": 9.5,
+      "comentario": "Delicioso!",
+      "codigo": "MNB6512",
+      "prato_id": 1,
+      "cliente_id": 1
+    },
+    {
+      "id": 2,
+      "nota": 8,
+      "comentario": "Sinto que faltou algum toque especial.",
+      "codigo": "POI4829",
+      "prato_id": 2,
+      "cliente_id": 1
+    },
+    {
+      "id": 3,
+      "nota": 9.7,
+      "comentario": "Prato fera demais!",
+      "codigo": "JKL1277",
+      "prato_id": 3,
+      "cliente_id": 2
+    },
+    {
+      "id": 4,
+      "nota": 9.2,
+      "comentario": "A maionese temperada deu um sabor sensacional!",
+      "codigo": "ABC1234",
+      "prato_id": 4,
+      "cliente_id": 2
+    },
+    {
+      "id": 5,
+      "nota": 9,
+      "comentario": "Ai, adorei este prato, voltarei mais vezes para saborear!",
+      "codigo": "RTE4853",
+      "prato_id": 5,
+      "cliente_id": 3
+    },
+    {
+      "id": 6,
+      "nota": 8.9,
+      "comentario": "Com um ajuste na massa, sendo mais fina, fica melhor.",
+      "codigo": "ZXC6531",
+      "prato_id": 6,
+      "cliente_id": 3
+    }
+  ]
 }

@@ -37,7 +37,7 @@ class FestivalCard extends StatelessWidget {
                 onPressed: () => Navigator.push(
                     context,
                     MaterialPageRoute(
-                        builder: (BuildContext context) => FestivalDetail())),
+                        builder: (BuildContext context) => FestivalDetail(festival.pratos, festival.nome))),
                 child: Text('VISUALIZAR')),
           ],
         )

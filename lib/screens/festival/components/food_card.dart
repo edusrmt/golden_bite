@@ -1,21 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:golden_bite/screens/rating/rating.dart';
+import 'package:golden_bite/services/api.dart';
+import 'package:golden_bite/models/food.dart';
 
 class FoodCard extends StatelessWidget {
-  const FoodCard(
-      {Key key,
-      this.headerText,
-      this.media,
-      this.supportingText,
-      this.place,
-      this.address})
-      : super(key: key);
+   const FoodCard({Key key, this.food}) : super(key: key);
 
-  final String headerText;
-  final String media;
-  final String supportingText;
-  final String place;
-  final String address;
+  final Food food;
 
   @override
   Widget build(BuildContext context) {
@@ -23,12 +14,16 @@ class FoodCard extends StatelessWidget {
       child: Column(
       children: <Widget>[
         ListTile(
-          title: Text(headerText, style: Theme.of(context).textTheme.headline5),
+          title: Text(food.nome, style: Theme.of(context).textTheme.headline5),
         ),
-        Image.asset(media, fit: BoxFit.cover),
+         FadeInImage.assetNetwork(
+            placeholder: 'assets/card_image_placeholder.jpg',
+            image: Uri.http(API.baseUrl, food.capa).toString(),
+            fit: BoxFit.fill,
+          ),
         Padding(
           padding: const EdgeInsets.all(16.0),
-          child: Text(supportingText,
+          child: Text(food.ingredientes,
               style: Theme.of(context).textTheme.bodyText2),
         ),
         Padding(
@@ -40,14 +35,14 @@ class FoodCard extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
                     Text(
-                      place,
+                      food.restauranteNome,
                       style: TextStyle(
                         color: Theme.of(context).colorScheme.primary,
                         fontWeight: FontWeight.bold,
                       ),
                     ),
                     Text(
-                      address,
+                      food.restauranteEndereco,
                       style: Theme.of(context).textTheme.caption,
                     )
                   ],

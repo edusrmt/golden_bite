@@ -4,7 +4,8 @@ import 'package:golden_bite/components/rounded_button.dart';
 import 'package:golden_bite/components/rounded_input_field.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:golden_bite/constants.dart';
-import 'package:golden_bite/screens/festival/festival.dart';
+import 'package:golden_bite/screens/myRatings/myRatings.dart';
+
 
 class Body extends StatelessWidget {
   const Body({
@@ -57,7 +58,7 @@ class Body extends StatelessWidget {
               press: () => Navigator.push(
                   context,
                   MaterialPageRoute(
-                      builder: (BuildContext context) => FestivalDetail())),
+                      builder: (BuildContext context) => MyRatings())),
             ),
           ],
         ),

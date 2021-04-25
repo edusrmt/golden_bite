@@ -6,13 +6,15 @@ class Festival {
   final String capa;
   final String descricao;
   final DateTime dataFim;
+  final List pratos;
 
   Festival(
       {@required this.id,
       @required this.nome,
       @required this.capa,
       @required this.descricao,
-      @required this.dataFim});
+      @required this.dataFim,
+      @required this.pratos});
 
   factory Festival.fromJson(Map<String, dynamic> json) {
     return Festival(
@@ -20,7 +22,8 @@ class Festival {
         nome: json['nome'],
         capa: json['capa'],
         descricao: json['descricao'],
-        dataFim: DateTime.parse(json['data_fim']));
+        dataFim: DateTime.parse(json['data_fim']),
+        pratos: json['pratos']);
   }
 
   String tempoRestante() {
