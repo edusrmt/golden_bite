@@ -194,51 +194,63 @@
   "avaliacao": [
     {
       "id": 1,
-      "nota": 9.5,
+      "nota": 4.5,
       "comentario": "Delicioso!",
       "codigo": "MNB6512",
-      "prato_id": 1,
-      "cliente_id": 1
+      "restauranteNome": "Pizzaria Alencar",
+      "pratoNome": "Franbacon",
+      "festivalNome": "Festival de Alexandria",
+      "clienteId": 1
     },
     {
       "id": 2,
-      "nota": 8,
+      "nota": 3.0,
       "comentario": "Sinto que faltou algum toque especial.",
       "codigo": "POI4829",
-      "prato_id": 2,
-      "cliente_id": 1
+      "restauranteNome": "Restaurante Furacão",
+      "festivalNome": "Festival de Alexandria",
+      "pratoNome": "Twitter",
+      "clienteId": 1
     },
     {
       "id": 3,
-      "nota": 9.7,
+      "nota": 4.7,
       "comentario": "Prato fera demais!",
       "codigo": "JKL1277",
-      "prato_id": 3,
-      "cliente_id": 2
+      "restauranteNome": "Xique-xique",
+      "pratoNome": "Xique-Chicken",
+      "festivalNome": "Culinária Aragonesa",
+      "clienteId": 2
     },
     {
       "id": 4,
-      "nota": 9.2,
+      "nota": 4.2,
       "comentario": "A maionese temperada deu um sabor sensacional!",
       "codigo": "ABC1234",
-      "prato_id": 4,
-      "cliente_id": 2
+      "restauranteNome": "Restaurante Proseando",
+      "pratoNome": "Papo-Alvinegro",
+      "festivalNome": "Culinária Aragonesa",
+      "clienteId": 4
     },
     {
       "id": 5,
-      "nota": 9,
+      "nota": 4.0,
       "comentario": "Ai, adorei este prato, voltarei mais vezes para saborear!",
       "codigo": "RTE4853",
-      "prato_id": 5,
-      "cliente_id": 3
+      "restauranteNome": "Bem-te-vi Sanduicheria",
+      "pratoNome": "Lasanha de frango",
+      "festivalNome": "Dias Festival",
+      "clienteId": 4
     },
     {
       "id": 6,
-      "nota": 8.9,
+      "nota": 5.0,
       "comentario": "Com um ajuste na massa, sendo mais fina, fica melhor.",
       "codigo": "ZXC6531",
-      "prato_id": 6,
-      "cliente_id": 3
+      "restauranteNome": "Chanana",
+      "pratoNome": "Torta de Margherita",
+      "festivalNome": "Dias Festival",
+      "clienteId": 4
     }
   ]
 }

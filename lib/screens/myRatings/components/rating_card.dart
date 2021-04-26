@@ -1,22 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:golden_bite/constants.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
+import 'package:golden_bite/models/rating.dart';
 
 class RatingCard extends StatelessWidget {
-  const RatingCard(
-      {Key key,
-      this.headerText,
-      this.rating,
-      this.nameFestival,
-      this.supportingText,
-      this.festival})
-      : super(key: key);
+  const RatingCard({Key key, this.rating}) : super(key: key);
 
-  final String headerText;
-  final String nameFestival;
-  final double rating;
-  final String supportingText;
-  final String festival;
+  final Rating rating;
 
   @override
   Widget build(BuildContext context) {
@@ -24,11 +14,12 @@ class RatingCard extends StatelessWidget {
         child: Column(
       children: <Widget>[
         ListTile(
-          title: Text(headerText, style: Theme.of(context).textTheme.headline5),
+          title: Text(rating.pratoNome,
+              style: Theme.of(context).textTheme.headline5),
           subtitle: Row(
             children: <Widget>[
               RatingBarIndicator(
-                rating: rating,
+                rating: rating.nota,
                 itemBuilder: (context, index) => Icon(
                   Icons.star,
                   color: kPrimaryColor,
@@ -37,13 +28,13 @@ class RatingCard extends StatelessWidget {
                 itemSize: 15.0,
                 direction: Axis.horizontal,
               ),
-              Text(festival)
+              Text(rating.festivalNome)
             ],
           ),
         ),
         Padding(
-          padding: const EdgeInsets.fromLTRB(16, 0, 16, 16),
-          child: Text(supportingText,
+          padding: const EdgeInsets.fromLTRB(5, 0, 5, 15),
+          child: Text(rating.comentario,
               style: Theme.of(context).textTheme.bodyText2),
         ),
       ],

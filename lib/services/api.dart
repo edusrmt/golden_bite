@@ -2,6 +2,7 @@ import 'package:golden_bite/models/festival.dart';
 import 'package:golden_bite/models/guide.dart';
 import 'package:golden_bite/models/food.dart';
 import 'package:golden_bite/models/user.dart';
+import 'package:golden_bite/models/rating.dart';
 import 'package:intl/intl.dart';
 import 'package:http/http.dart' as http;
 import 'package:crypt/crypt.dart';
@@ -106,6 +107,21 @@ class API {
       return foodsList;
     } else {
       throw Exception('Failed to retrive food information');
+    }
+  }
+
+  Future<List<Rating>> fetchRating(int idUser) async {
+    final response = await http.get(Uri.http(baseUrl, 'avaliacao'));
+
+    if (response.statusCode == 200) {
+      Iterable jsonBody = json.decode(response.body);
+      List<Rating> rating = List<Rating>.from(jsonBody.map((e) => Rating.fromJson(e)));
+
+      List<Rating> ratingList = rating.where((e) => e.clienteId == idUser).toList();
+
+      return ratingList;
+    } else {
+      throw Exception('Failed to retrive rating information');
     }
   }
 }
