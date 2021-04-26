@@ -2,11 +2,32 @@ import 'package:flutter/material.dart';
 import 'package:golden_bite/components/main_drawer.dart';
 import 'package:golden_bite/components/rounded_button.dart';
 import 'package:golden_bite/components/rounded_input_field.dart';
+import 'package:golden_bite/models/user.dart';
+import 'package:golden_bite/screens/editProfile/editProfile.dart';
+import 'package:golden_bite/services/api.dart';
 
-class Body extends StatelessWidget {
-  const Body({
-    Key key,
-  }) : super(key: key);
+class Body extends StatefulWidget {
+  final int id;
+  final String nome;
+  final String sobrenome;
+  final String cpf;
+  final String email;
+
+  const Body(this.id, this.nome, this.sobrenome, this.cpf, this.email);
+  @override
+  _BodyState createState() => _BodyState();
+}
+
+class _BodyState extends State<Body> {
+  API _api;
+  Future<User> futureUser;
+  @override
+  void initState() {
+    super.initState();
+
+    _api = new API();
+    futureUser = _api.fetchUser(widget.email);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -23,24 +44,34 @@ class Body extends StatelessWidget {
               alignment: Alignment.center,
             ),
             RoundedInputField(
-              hintText: "João",
+              hintText: widget.nome,
               onChanged: (value) {},
             ),
             RoundedInputField(
-              hintText: "Silva",
+              hintText: widget.sobrenome,
               onChanged: (value) {},
             ),
             RoundedInputField(
-              hintText: "123.456.789-10",
+              hintText: widget.cpf,
               onChanged: (value) {},
             ),
             RoundedInputField(
-              hintText: "joao@email.com",
+              hintText: widget.email,
               onChanged: (value) {},
             ),
             RoundedButton(
               text: "EDITAR INFORMAÇÕES",
-              press: () {},
+              press: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (BuildContext context) => EditProfile(
+                            widget.id,
+                            widget.nome,
+                            widget.sobrenome,
+                            widget.cpf,
+                            widget.email)));
+              },
             ),
             SizedBox(height: 12),
             RoundedButton(

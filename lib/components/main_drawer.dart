@@ -13,7 +13,10 @@ class MainDrawer extends StatefulWidget {
 }
 
 class _MainDrawerState extends State<MainDrawer> {
-  String nomeCompleto = "";
+  int id;
+  String nome = "";
+  String sobrenome = "";
+  String cpf = "";
   String email = "";
 
   @override
@@ -26,7 +29,10 @@ class _MainDrawerState extends State<MainDrawer> {
     User user = await Auth.getUser();
 
     setState(() {
-      nomeCompleto = "${user.nome} ${user.sobrenome}";
+      id = user.id;
+      nome = user.nome;
+      sobrenome = user.sobrenome;
+      cpf = user.cpf;
       email = user.email;
     });
   }
@@ -37,7 +43,8 @@ class _MainDrawerState extends State<MainDrawer> {
       child: ListView(
         children: <Widget>[
           UserAccountsDrawerHeader(
-            accountName: Text(nomeCompleto, style: TextStyle(fontSize: 20.0)),
+            accountName:
+                Text(nome + " " + sobrenome, style: TextStyle(fontSize: 20.0)),
             accountEmail: Text(email),
             currentAccountPicture: CircleAvatar(
               backgroundImage: AssetImage('assets/logo.png'),
@@ -82,7 +89,8 @@ class _MainDrawerState extends State<MainDrawer> {
               Navigator.push(
                   context,
                   MaterialPageRoute(
-                      builder: (BuildContext context) => Profile()));
+                      builder: (BuildContext context) =>
+                          Profile(id, nome, sobrenome, cpf, email)));
             },
           ),
           ListTile(

@@ -9,7 +9,7 @@ import 'package:crypt/crypt.dart';
 import 'dart:convert';
 
 class API {
-  static String baseUrl = '';
+  static String baseUrl = '192.168.15.170:3000';
 
   Future<bool> createAccount(String nome, String sobrenome, String cpf,
       String email, String senha) async {
@@ -46,6 +46,51 @@ class API {
     return false;
   }
 
+  Future<bool> editProfile(
+      int id, String nome, String sobrenome, String cpf, String email) async {
+    final response = await http.get(Uri.http(baseUrl, 'clientes/$id'));
+
+    if (response.statusCode == 200) {
+      Iterable jsonBody = json.decode(response.body);
+
+      User user = User.fromJson(jsonBody.first);
+
+      int id = user.id;
+      String meuCPF = user.cpf;
+      String meuEmail = user.email;
+
+      final sameEmail =
+          await http.get(Uri.http(baseUrl, 'clientes', {'email': email}));
+
+      if (sameEmail.statusCode == 200 &&
+          (sameEmail.body == '[]' || sameEmail.body == meuEmail)) {
+        final sameCPF =
+            await http.get(Uri.http(baseUrl, 'clientes', {'cpf': cpf}));
+
+        if (sameCPF.statusCode == 200 &&
+            (sameCPF.body == '[]' || sameCPF.body == meuCPF)) {
+          final response = await http.put(
+            Uri.http(baseUrl, 'clientes/$id'),
+            headers: <String, String>{
+              'Content-Type': 'application/json; charset=UTF-8',
+            },
+            body: jsonEncode(<String, String>{
+              'nome': nome,
+              'sobrenome': sobrenome,
+              'cpf': cpf,
+              'email': email
+            }),
+          );
+
+          if (response.statusCode == 204) {
+            return true;
+          }
+        }
+      }
+    }
+    return false;
+  }
+
   Future<User> login(String email, String senha) async {
     final response =
         await http.get(Uri.http(baseUrl, 'clientes', {'email': email}));
@@ -64,6 +109,21 @@ class API {
     }
 
     return User.empty();
+  }
+
+  Future<User> fetchUser(String email) async {
+    final response =
+        await http.get(Uri.http(baseUrl, 'clientes', {'email': email}));
+
+    if (response.statusCode == 200) {
+      Iterable jsonBody = json.decode(response.body);
+
+      User user = User.fromJson(jsonBody.first);
+
+      return user;
+    } else {
+      throw Exception('Failed to retrive user information');
+    }
   }
 
   Future<List<Festival>> fetchFestivals() async {
@@ -115,9 +175,11 @@ class API {
 
     if (response.statusCode == 200) {
       Iterable jsonBody = json.decode(response.body);
-      List<Rating> rating = List<Rating>.from(jsonBody.map((e) => Rating.fromJson(e)));
+      List<Rating> rating =
+          List<Rating>.from(jsonBody.map((e) => Rating.fromJson(e)));
 
-      List<Rating> ratingList = rating.where((e) => e.clienteId == idUser).toList();
+      List<Rating> ratingList =
+          rating.where((e) => e.clienteId == idUser).toList();
 
       return ratingList;
     } else {
