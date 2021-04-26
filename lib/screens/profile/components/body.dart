@@ -43,22 +43,22 @@ class _BodyState extends State<Body> {
             Align(
               alignment: Alignment.center,
             ),
-            RoundedInputField(
-              hintText: widget.nome,
-              onChanged: (value) {},
-            ),
-            RoundedInputField(
-              hintText: widget.sobrenome,
-              onChanged: (value) {},
-            ),
-            RoundedInputField(
-              hintText: widget.cpf,
-              onChanged: (value) {},
-            ),
-            RoundedInputField(
-              hintText: widget.email,
-              onChanged: (value) {},
-            ),
+            Padding(
+                padding: EdgeInsets.fromLTRB(20, 20, 20, 20),
+                child: Text('Nome: ' + widget.nome,
+                    style: TextStyle(fontSize: 20))),
+            Padding(
+                padding: EdgeInsets.fromLTRB(20, 20, 20, 20),
+                child: Text('Sobrenome: ' + widget.sobrenome,
+                    style: TextStyle(fontSize: 20))),
+            Padding(
+                padding: EdgeInsets.fromLTRB(20, 20, 20, 20),
+                child:
+                    Text('CPF: ' + widget.cpf, style: TextStyle(fontSize: 20))),
+            Padding(
+                padding: EdgeInsets.fromLTRB(20, 20, 20, 20),
+                child: Text('E-mail: ' + widget.email,
+                    style: TextStyle(fontSize: 20))),
             RoundedButton(
               text: "EDITAR INFORMAÇÕES",
               press: () {
