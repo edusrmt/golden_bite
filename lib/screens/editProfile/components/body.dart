@@ -32,6 +32,7 @@ class _BodyState extends State<Body> {
   @override
   void initState() {
     super.initState();
+    _api = new API();
     getUserData();
   }
 

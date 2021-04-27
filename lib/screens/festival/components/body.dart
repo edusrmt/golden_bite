@@ -3,6 +3,7 @@ import 'package:golden_bite/components/main_drawer.dart';
 import 'package:golden_bite/screens/festival/components/food_card.dart';
 import 'package:golden_bite/models/food.dart';
 import 'package:golden_bite/services/api.dart';
+
 class Body extends StatefulWidget {
   final String titlePage;
   final List pratos;
@@ -22,10 +23,12 @@ class _BodyState extends State<Body> {
     _api = new API();
     futureFood = _api.fetchFood(widget.pratos);
   }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text(widget.titlePage)), drawer: MainDrawer(),
+      appBar: AppBar(title: Text(widget.titlePage)),
+      drawer: MainDrawer(),
       body: FutureBuilder<List<Food>>(
           future: futureFood,
           builder: (context, snapshot) {
@@ -34,8 +37,9 @@ class _BodyState extends State<Body> {
                   padding: EdgeInsets.symmetric(vertical: 15, horizontal: 10),
                   itemCount: snapshot.data.length,
                   separatorBuilder: (context, index) => SizedBox(height: 15),
-                  itemBuilder: (context, index) =>
-                    FoodCard(food: snapshot.data[index]));
+                  itemBuilder: (context, index) => FoodCard(
+                      food: snapshot.data[index],
+                      festivalName: widget.titlePage));
             } else if (snapshot.connectionState == ConnectionState.waiting) {
               return Center(
                   child: CircularProgressIndicator(

@@ -33,9 +33,11 @@ class RatingCard extends StatelessWidget {
           ),
         ),
         Padding(
-          padding: const EdgeInsets.fromLTRB(5, 0, 5, 15),
-          child: Text(rating.comentario,
-              style: Theme.of(context).textTheme.bodyText2),
+          padding: const EdgeInsets.fromLTRB(16, 0, 16, 15),
+          child: Row(children: <Widget>[
+            Text(rating.comentario,
+                style: Theme.of(context).textTheme.bodyText2)
+          ]),
         ),
       ],
     ));

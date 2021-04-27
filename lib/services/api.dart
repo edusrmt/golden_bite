@@ -3,13 +3,14 @@ import 'package:golden_bite/models/guide.dart';
 import 'package:golden_bite/models/food.dart';
 import 'package:golden_bite/models/user.dart';
 import 'package:golden_bite/models/rating.dart';
+import 'package:golden_bite/services/auth.dart';
 import 'package:intl/intl.dart';
 import 'package:http/http.dart' as http;
 import 'package:crypt/crypt.dart';
 import 'dart:convert';
 
 class API {
-  static String baseUrl = '192.168.15.170:3000';
+  static String baseUrl = '';
 
   Future<bool> createAccount(String nome, String sobrenome, String cpf,
       String email, String senha) async {
@@ -185,5 +186,32 @@ class API {
     } else {
       throw Exception('Failed to retrive rating information');
     }
+  }
+
+  Future<bool> createRating(String nomePrato, String codigo, double nota,
+      String comentario, String nomeRestaurante, String nomeFestival) async {
+    await Auth.getUser().then((user) async {
+      final response = await http.post(
+        Uri.http(baseUrl, 'avaliacao'),
+        headers: <String, String>{
+          'Content-Type': 'application/json; charset=UTF-8',
+        },
+        body: jsonEncode(<String, dynamic>{
+          'pratoNome': nomePrato,
+          'codigo': codigo,
+          'nota': nota,
+          'comentario': comentario,
+          'restauranteNome': nomeRestaurante,
+          'festivalNome': nomeFestival,
+          'clienteId': user.id
+        }),
+      );
+
+      if (response.statusCode == 201) {
+        return true;
+      }
+    });
+
+    return false;
   }
 }

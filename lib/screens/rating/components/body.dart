@@ -5,12 +5,30 @@ import 'package:golden_bite/components/rounded_input_field.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:golden_bite/constants.dart';
 import 'package:golden_bite/screens/myRatings/myRatings.dart';
+import 'package:golden_bite/services/api.dart';
 
+class Body extends StatefulWidget {
+  const Body(this.nomePrato, this.nomeRestaurante, this.nomeFestival);
 
-class Body extends StatelessWidget {
-  const Body({
-    Key key,
-  }) : super(key: key);
+  final String nomePrato;
+  final String nomeRestaurante;
+  final String nomeFestival;
+
+  @override
+  _BodyState createState() => _BodyState();
+}
+
+class _BodyState extends State<Body> {
+  API _api;
+  String code = "";
+  double rating = 0.0;
+  String comment = "";
+
+  @override
+  void initState() {
+    super.initState();
+    _api = new API();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -30,7 +48,11 @@ class Body extends StatelessWidget {
             ),
             RoundedInputField(
               hintText: "Código",
-              onChanged: (value) {},
+              onChanged: (value) {
+                setState(() {
+                  code = value;
+                });
+              },
             ),
             RatingBar.builder(
               initialRating: 0,
@@ -44,21 +66,34 @@ class Body extends StatelessWidget {
                 Icons.star,
                 color: kPrimaryColor,
               ),
-              onRatingUpdate: (rating) {
-                print(rating);
+              onRatingUpdate: (value) {
+                setState(() {
+                  rating = value;
+                });
               },
             ),
             RoundedInputField(
               hintText: "Observação",
               size: 110,
-              onChanged: (value) {},
+              onChanged: (value) {
+                setState(() {
+                  comment = value;
+                });
+              },
             ),
             RoundedButton(
               text: "AVALIAR",
-              press: () => Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                      builder: (BuildContext context) => MyRatings())),
+              press: () {
+                _api
+                    .createRating(widget.nomePrato, code, rating, comment,
+                        widget.nomeRestaurante, widget.nomeFestival)
+                    .then((value) {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (BuildContext context) => MyRatings()));
+                });
+              },
             ),
           ],
         ),

@@ -25,7 +25,9 @@ class Rating {
       id: json['id'],
       pratoNome: json['pratoNome'],
       codigo: json['codigo'],
-      nota: json['nota'].toDouble(),
+      nota: json['nota'] is int
+          ? json['nota'].toDouble()
+          : json['data'] as double,
       comentario: json['comentario'],
       restauranteNome: json['restauranteNome'],
       festivalNome: json['festivalNome'],
