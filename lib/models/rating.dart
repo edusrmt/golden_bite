@@ -4,7 +4,7 @@ class Rating {
   final int id;
   final String codigo;
   final String comentario;
-  final double nota;
+  final nota;
   final int clienteId;
   final String restauranteNome;
   final String festivalNome;
@@ -25,9 +25,7 @@ class Rating {
       id: json['id'],
       pratoNome: json['pratoNome'],
       codigo: json['codigo'],
-      nota: json['nota'] is int
-          ? json['nota'].toDouble()
-          : json['data'] as double,
+      nota: json['nota'],
       comentario: json['comentario'],
       restauranteNome: json['restauranteNome'],
       festivalNome: json['festivalNome'],

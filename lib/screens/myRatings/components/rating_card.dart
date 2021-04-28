@@ -19,7 +19,7 @@ class RatingCard extends StatelessWidget {
           subtitle: Row(
             children: <Widget>[
               RatingBarIndicator(
-                rating: rating.nota,
+                rating: rating.nota.toDouble(),
                 itemBuilder: (context, index) => Icon(
                   Icons.star,
                   color: kPrimaryColor,
