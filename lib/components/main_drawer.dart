@@ -3,7 +3,6 @@ import 'package:golden_bite/models/user.dart';
 import 'package:golden_bite/screens/festivals/festivals.dart';
 import 'package:golden_bite/screens/guides/guides.dart';
 import 'package:golden_bite/screens/login/login.dart';
-import 'package:golden_bite/screens/profile/profile.dart';
 import 'package:golden_bite/screens/myRatings/myRatings.dart';
 import 'package:golden_bite/services/auth.dart';
 
@@ -80,17 +79,6 @@ class _MainDrawerState extends State<MainDrawer> {
                   context,
                   MaterialPageRoute(
                       builder: (BuildContext context) => MyRatings()));
-            },
-          ),
-          ListTile(
-            leading: Icon(Icons.person),
-            title: Text('Meu Perfil'),
-            onTap: () {
-              Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                      builder: (BuildContext context) =>
-                          Profile(id, nome, sobrenome, cpf, email)));
             },
           ),
           ListTile(
